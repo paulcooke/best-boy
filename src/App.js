@@ -1,6 +1,7 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import { createGlobalStyle } from 'styled-components'
 
 import Home from '../src/components/common/Home'
 import BestTests from './components/best-boy-tests/best-tests'

@@ -1,5 +1,9 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Home from '../src/components/common/Home'
+import BestTests from './components/best-boy-tests/best-tests'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,37 +17,16 @@ const GlobalStyle = createGlobalStyle`
   }
 ` 
 
-const Wrapper = styled.section`
-  background-color: white;  
-  min-height: 100vh;  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-`
-
-const Title = styled.h1`
-  color: #282c34;
-`
-
-const Paragraph = styled.p`
-  color: #282c34;
-`
-
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
-        
-        <Title>
-          BEST BOY BATTLE
-        </Title>
-        <Paragraph>
-          Who is the best boy? Let's find out...
-        </Paragraph>
-
-      </Wrapper>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/best-tests" component={BestTests} />
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }

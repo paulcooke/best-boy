@@ -9,29 +9,25 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    font-family: 'Press Start 2P', cursive;
   }
 ` 
 
 const Wrapper = styled.section`
-  background-color: #282c34;  
+  background-color: white;  
   min-height: 100vh;  
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 20px;
 `
 
 const Title = styled.h1`
-  color: red;
+  color: #282c34;
 `
 
 const Paragraph = styled.p`
-  color: red;
+  color: #282c34;
 `
 
 function App() {
@@ -41,10 +37,10 @@ function App() {
       <Wrapper>
         
         <Title>
-          BEST BOY MACHINE
+          BEST BOY BATTLE
         </Title>
         <Paragraph>
-          Who ate my muffin?
+          Who is the best boy? Let's find out...
         </Paragraph>
 
       </Wrapper>

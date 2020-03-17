@@ -1,5 +1,21 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+` 
 
 const Wrapper = styled.section`
   background-color: #282c34;  
@@ -20,16 +36,19 @@ const Paragraph = styled.p`
 
 function App() {
   return (
-    <Wrapper>
-      
-      <Title>
-        BEST BOY MACHINE
-      </Title>
-      <Paragraph>
-        Who ate my muffin?
-      </Paragraph>
+    <>
+      <GlobalStyle />
+      <Wrapper>
+        
+        <Title>
+          BEST BOY MACHINE
+        </Title>
+        <Paragraph>
+          Who ate my muffin?
+        </Paragraph>
 
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 }
 

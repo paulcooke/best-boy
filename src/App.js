@@ -14,13 +14,21 @@ const Title = styled.h1`
   color: red;
 `
 
+const Paragraph = styled.p`
+  color: red;
+`
 
 function App() {
   return (
     <Wrapper>
+      
       <Title>
-          hello there people
+        BEST BOY MACHINE
       </Title>
+      <Paragraph>
+        Who ate my muffin?
+      </Paragraph>
+
     </Wrapper>
   );
 }

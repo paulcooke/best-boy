@@ -65,7 +65,7 @@ const Home = () => {
         </ImageBox>
       </VsSection>
       
-      <a href="/best-tests"><Button>FIGHT</Button></a>
+      <a href="/best-tests"><Button>FIGHT!</Button></a>
       
     </Wrapper>
   )

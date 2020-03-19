@@ -1,8 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  color: #282c34;
+  text-align: center;
+  padding: 0 2px;
+`
 
 const BattleOne = () => {
   return (
-    <h1>testing again</h1>
+    <Title>BATTLE ONE!!!</Title>
+    
   )
 }
 

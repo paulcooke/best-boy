@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import GlobalStyle from './globalStyles'
+import GlobalStyle from './styles/globalStyles'
 
 import Home from './Components/common/Home'
 import BattleOne from './Components/battle-rounds/BattleOne'

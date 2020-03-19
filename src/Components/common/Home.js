@@ -2,33 +2,39 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-    background-color: white;  
+    background-color: white; 
     min-height: 100vh;  
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-items: center;
     padding-top: 20px;
+    max-width: 600px;
   `
 
 const Title = styled.h1`
   color: #282c34;
+  text-align: center;
+  padding: 0 2px;
 `
 
 const Paragraph = styled.p`
   color: #282c34;
+  text-align: center;
+  padding: 0 2px;
 `
 
 const VsSection = styled.section`
-  width: 600px;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center
 `
 
 const ImageBox = styled.div`
-  height: 200px;
-  width: 200px;
+  max-height: 200px;
+  max-width: 200px;
 `
 
 const Image = styled.img`
@@ -38,7 +44,7 @@ const Image = styled.img`
 
 const Button = styled.button`
   font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  font-size: 14px;
   background-color: orange;
   padding: 15px;
 `

@@ -52,12 +52,17 @@ const Home = () => {
   const [battleOneStatus, setBattleOneStatus] = useState('BATTLE ONE >>> FIGHT!')
 
   const scorePlusOne = ({ target: { value, name } }) => {
-    if (name === 'paulScore') {
-      setPaulScore(parseInt(value) + 1)
-    } else {
-      setMarkScore(parseInt(value) + 1)
-    }
+    if (name === 'paulScore') setPaulScore(parseInt(value) + 1)
+    if (name === 'markScore') setMarkScore(parseInt(value) + 1)
     localStorage.setItem(name, parseInt(value) + 1)
+  }
+
+  const resetScores = () => {
+    setPaulScore(0)
+    setMarkScore(0)
+    setBattleOneStatus('BATTLE ONE >>> FIGHT!')
+    localStorage.removeItem('paulScore')
+    localStorage.removeItem('markScore')
   }
 
   return (
@@ -92,7 +97,9 @@ const Home = () => {
 
       <br/>
       <a href="/battle-one"><Button>{battleOneStatus}</Button></a>
-      
+      <br/>
+      <button onClick={resetScores}>reset scores</button>
+
     </Wrapper>
   )
 }

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Paul</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Paul" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(38.000000, 45.000000)">
+            <g id="Hair" transform="translate(119.000000, 0.000000)">
+                <polyline id="Path-2" fill="#794027" points="0 42 0 28 7 28 7 21 21 21 21 14 63 14 63 8 56 8 56 0 70 0 70 4 70 7 78 7 78 29 69 29 69 34 64 34 64 42"></polyline>
+                <polygon id="Path-3" fill="#522A2B" points="71 29 71 22 78 22 78 29"></polygon>
+                <polygon id="Path-4" fill="#4F2B2B" points="43 29 71 29 71 36 64 36 64 42 15 42 15 36 43 36"></polygon>
+                <polygon id="Path-5" fill="#976741" points="0 42 14 42 14 57 7 57 7 64 0 64"></polygon>
+            </g>
+            <g id="Face" transform="translate(112.000000, 42.000000)">
+                <polygon id="Path-6" fill="#C59267" points="21 0 70 0 70 8 21 8"></polygon>
+                <polygon id="Path-7" fill="#EABE9B" points="21 8 70 8 70 29 77 29 77 43 70 43 70 36 63 36 35 36 28 36 28 43 21 43 21 29 14 29 14 15 21 15"></polygon>
+                <polygon id="Path-9" fill="#1E1F33" points="25 29 32 29 32 15 25 15"></polygon>
+                <polygon id="Path-9" fill="#1E1F33" points="53 29 60 29 60 15 53 15"></polygon>
+                <polygon id="Path-10" fill="#ECBB9B" points="7 21 6 21 6 22 1 22 1 23 0 23 0 29 7 29"></polygon>
+                <polygon id="Path-11" fill="#C29168" points="0 29 0 36 7 36 7 29"></polygon>
+                <polygon id="Path-17" fill="#CA946E" points="35 50 42 50 42 57 35 57"></polygon>
+                <polygon id="Path-17" fill="#CA946E" points="56 50 63 50 63 57 56 57"></polygon>
+                <polygon id="Path-12" fill="#CA946E" points="7 22 7 29 14 29 14 50 28 50 28 43 35 43 35 36 28 36 28 43 21 43 21 29 14 29 14 22"></polygon>
+                <polygon id="Path-13" fill="#EABE9B" points="35 43 35 50 42 50 56 50 63 50 63 43"></polygon>
+                <polygon id="Path-14" fill="#CA946E" points="63 36 70 36 70 43 63 43"></polygon>
+                <polygon id="Path-15" fill="#CA946E" points="77 43 70 43 70 50 77 50"></polygon>
+            </g>
+            <g id="Beard" transform="translate(119.000000, 71.000000)">
+                <polygon id="Path-16" fill="#764328" points="28 7 56 7 56 14 28 14"></polygon>
+                <polygon id="Path-18" fill="#7B3E29" points="0 0 7 0 7 21 21 21 21 14 28 14 28 28 35 28 35 21 49 21 49 28 56 28 56 14 63 14 63 21 70 21 70 28 63 28 63 34 62 34 62 35 56 35 56 42 21 42 21 35 6 35 6 28 0 28"></polygon>
+                <polygon id="Path-19" fill="#542B29" points="6 35 6 42 14 42 14 48 62 48 62 35 56 35 56 42 21 42 21 35"></polygon>
+                <polygon id="Path-20" fill="#44183B" points="0 28 0 42 6 42 6 50 14 50 14 56 63 56 63 50 70 50 70 28 63 28 63 34 62 34 62 48 14 48 14 42 6 42 6 28"></polygon>
+            </g>
+            <g id="Shirt" transform="translate(105.000000, 120.000000)">
+                <polygon id="Path-21" fill="#5AA763" points="35.9865385 14 20 14 20 28 20 42 35.9865385 42 35.9865385 49 64.88 49 64.9976923 42 64.9976923 31 71 31 71 7 35.9865385 7"></polygon>
+                <polygon id="Path-22" fill="#55804B" points="71 14 78 14 78 21 71 21"></polygon>
+                <polygon id="Path-23" fill="#55804B" points="65 31 71 31 71 42 65 42"></polygon>
+                <polygon id="Path-24" fill="#55804B" points="14 14 20 14 20 42 14 42"></polygon>
+                <polygon id="Path-25" fill="#55804B" points="7 7 14 7 14 14 7 14"></polygon>
+                <polygon id="Path-26" fill="#5AA763" points="0 -4.08006962e-15 7 0 7 7 0 7"></polygon>
+                <polygon id="Path-8" fill="#E2B631" points="36 14 42 14 42 21 48 21 48 34 42 34 42 27 36 27"></polygon>
+                <polygon id="Path-8" fill="#D18935" points="42 7 48 7 48 14.6666667 54 14.6666667 54 29 48 29 48 21 42 21"></polygon>
+            </g>
+            <g id="Cape" transform="translate(0.000000, 29.000000)">
+                <polygon id="Path" fill="#BA2C30" points="112 42 98 42 98 35 84 35 84 28 63 28 63 21 55 21 55 14 49 14 49 7 42 7 42 0 35 0 35 14 21 14 21 21 14 21 14 28 7 28 7 42 0 42 -1.94289029e-16 63 7 63 7 84 14 84 14 98 7 98 7 112 0 112 0 119 7 119 7 126 20 126 20 119 27 119 27 112 34 112 34 105 48 105 48 98 77 98 77 91 91 91 91 84 105 84 105 91 112 91 112 98 119 98 119 105 141 105 141 98 133 98 133 92 125 92 125 84 119 84 119 49 112 49"></polygon>
+                <polygon id="Path-27" fill="#A2202A" points="0 56 12 56 12 49 34 49 34 35 7 35 7 42 0 42"></polygon>
+                <polygon id="Path-28" fill="#8C151B" points="7 56 7 63 13 63 13 56 26 56 26 49 12 49 12 56"></polygon>
+                <polygon id="Path-29" fill="#8C151B" points="34 42 34 49 47 49 47 42"></polygon>
+                <polygon id="Path-29" fill="#A2202A" points="47 42 47 49 60 49 60 42"></polygon>
+                <polygon id="Path-30" fill="#A2202A" points="13 63 13 73 7 73 7 78 13 78 13 91 20 91 20 84 27 84 27 76 40 76 40 70 48 70 48 64 62 64 62 57 41 57 41 63"></polygon>
+                <polygon id="Path-31" fill="#8C151B" points="62 57 91 57 91 64 62 64"></polygon>
+                <polygon id="Path-32" fill="#8C151B" points="62 64 62 70 48 70 48 76 40 76 40 70 48 70 48 64"></polygon>
+                <polygon id="Path-33" fill="#8C151B" points="34 76 34 84 27 84 27 91 20 91 20 84 27 84 27 76"></polygon>
+                <polygon id="Path-34" fill="#8C151B" points="7 78 13 78 13 84 7 84"></polygon>
+                <polygon id="Path-35" fill="#A2202A" points="84 77 84 84 62 84 62 91 42 91 42 98 28 98 28 105 22 105 22 112 7 112 7 98 28 98 28 91 42 91 42 84 49 84 49 77"></polygon>
+                <polygon id="Path-36" fill="#8C151B" points="91 64 119 64 119 70 112 70 112 77 105 77 105 84 91 84 91 91 77 91 77 98 48 98 48 105 34 105 34 112 27 112 27 119 20 119 20 126 7 126 7 119 0 119 0 112 22 112 22 105 28 105 28 98 42 98 42 91 62 91 62 84 84 84 84 77 98 77 98 70 91 70"></polygon>
+                <polygon id="Path-37" fill="#8C151B" points="105 84 105 91 112 91 112 98 119 98 119 105 141 105 141 98 133 98 133 92 125 92 125 98 119 98 119 91 112 91 112 84"></polygon>
+                <polygon id="Path-38" fill="#8C151B" points="119 84 125 84 125 92 119 92"></polygon>
+                <polygon id="Path-39" fill="#921422" points="176 98 176 105 189 105 189 98 196 98 196 92 182 92 182 98"></polygon>
+                <polygon id="Path-40" fill="#7D221F" points="189 77 196 77 196 92 189 92"></polygon>
+                <polygon id="Path-41" fill="#A21E2E" points="189 70 196 70 196 77 203 77 203 98 196 98 196 77 189 77"></polygon>
+            </g>
+            <g id="Left-Arm" transform="translate(183.000000, 113.000000)">
+                <polygon id="Path-42" fill="#CC976D" points="6 14 6 21 0 21 0 28 6 28 6 35 27 35 27 28 34 28 34 21 41 21 41 14 34 14 34 21 27 21 27 28 20 28 20 21 13 21 13 14"></polygon>
+                <polygon id="Path-43" fill="#E8BD9B" points="13 14 13 21 20 21 20 28 27 28 27 21 34 21 34 14 41 14 41 0 28 0 28 14"></polygon>
+            </g>
+            <g id="Right-Arm" transform="translate(63.000000, 113.000000)">
+                <polygon id="Path-44" fill="#C78E65" points="49 14 49 28 35 28 35 35 21 35 21 28 28 28 28 21 35 21 35 14"></polygon>
+                <polygon id="Path-45" fill="#ECC29C" points="35 7.09154957e-15 42 0 42 14 35 14 35 21 28 21 28 28 21 28 21 35 21 49 7 49 7 42 0 42 0 35 7 35 7 28 14 28 14 21 21 21 21 14 28 14 28 7 35 7"></polygon>
+            </g>
+            <g id="Sword" transform="translate(21.000000, 148.000000)">
+                <polygon id="Path-46" fill="#B16D2E" points="35 -5.82867088e-15 42 -5.82867088e-15 42 7 49 7 49 14 56 14 56 21 49 21 49 14 42 14 42 7 35 7 35 -1.16573418e-15 27 -1.16573418e-15"></polygon>
+                <polygon id="Path-47" fill="#9B9F9E" points="0 50 0 56 14 56 14 49 21 49 21 42 28 42 28 35 35 35 35 28 42 28 42 21 35 21 35 28 28 28 28 35 21 35 21 42 14 42 14 50"></polygon>
+                <polygon id="Path-47" fill="#C0C9C8" points="7 43 7 50 14 50 14 42 21 42 21 35 28 35 28 28 35 28 35 21 42 21 42 14 35 14 35 21 28 21 28 28 21 28 21 35 14 35 14 43"></polygon>
+                <polygon id="Path-47" fill="#B2B6B7" points="1.44502466e-14 43 0 50 7 50 7 43 14 43 14 35 21 35 21 28 28 28 28 21 35 21 35 14 28 14 28 21 21 21 21 28 14 28 14 36 7 36 7 43"></polygon>
+                <polygon id="Path-46" fill="#D0921D" points="27 0 35 0 35 7 42 7 42 14 49 14 49 21 56 21 56 28 49 28 49 21 42 21 42 14 35 14 35 7 27 7"></polygon>
+            </g>
+            <g id="Shoes" transform="translate(92.000000, 198.000000)">
+                <polygon id="Path-48" fill="#37313B" points="20 1.65978342e-14 20 13 3.09058334e-13 13 3.09058334e-13 6 0 0"></polygon>
+                <polygon id="Path-49" fill="#45424B" points="98 -7.12624404e-15 98 13 125 13 125 7 118 7 118 0"></polygon>
+            </g>
+            <g id="Pants" transform="translate(98.000000, 162.000000)">
+                <polygon id="Path-50" fill="#871B19" points="14 36 14 29 21 29 21 22 35 22 35 14 43 14 43 7 70 7 70 22 84 22 84 29 92 29 92 36 84 36 84 29 70 29 70 22 35 22 35 29 21 29 21 36"></polygon>
+                <polygon id="Path-51" fill="#992625" points="14 36 0 36 0 29 7 29 7 15 14 15 14 7 21 7 21 0 43 0 43 14 35 14 35 22 21 22 21 29 14 29"></polygon>
+                <polygon id="Path-52" fill="#BF2831" points="105 36 92 36 92 29 84 29 84 22 70 22 70 7 72 7 72 0 84 0 84 7 91 7 91 15 98 15 98 29 105 29"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

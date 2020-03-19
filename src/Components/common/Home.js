@@ -43,6 +43,10 @@ const Button = styled.button`
   padding: 15px;
 `
 
+const ScorePlusOne = () => {
+
+}
+
 const Home = () => {
   const [paulScore, setPaulScore] = useState(0)
   const [markScore, setMarkScore] = useState(0)
@@ -60,21 +64,26 @@ const Home = () => {
       
       <VsSection>
         <ImageBox>
-          <Image src="https://us.123rf.com/450wm/chuckchee/chuckchee1709/chuckchee170900054/85696044-stock-vector-pixel-art-bearded-hero-character-with-red-cape-and-sword-ready-to-fight.jpg?ver=6" />    
+          <Image src="assets/paul.svg" />    
         </ImageBox>
         <Paragraph>VS</Paragraph>
         <ImageBox>
-          <Image src="https://image.shutterstock.com/image-vector/pixel-art-character-8bit-bearded-260nw-1170546082.jpg"/>
+          <Image src="assets/mark.svg" />
         </ImageBox>
       </VsSection>
       
       <VsSection>
         <Paragraph>Score: {paulScore}</Paragraph>
-        <Paragraph></Paragraph>
         <Paragraph>Score: {markScore}</Paragraph>
       </VsSection>
+
+      <VsSection>
+        <button>test paul score</button>
+        <button>test mark score</button>
+      </VsSection>
+
       <br/>
-<a href="/battle-one"><Button>{battleOneStatus}</Button></a>
+      <a href="/battle-one"><Button>{battleOneStatus}</Button></a>
       
     </Wrapper>
   )

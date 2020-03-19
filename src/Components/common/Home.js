@@ -43,14 +43,22 @@ const Button = styled.button`
   padding: 15px;
 `
 
-const ScorePlusOne = () => {
 
-}
 
 const Home = () => {
-  const [paulScore, setPaulScore] = useState(0)
-  const [markScore, setMarkScore] = useState(0)
+  
+  const [paulScore, setPaulScore] = localStorage.getItem('paulScore') ? useState(localStorage.getItem('paulScore')) : useState(0)
+  const [markScore, setMarkScore] = localStorage.getItem('markScore') ? useState(localStorage.getItem('markScore')) : useState(0)
   const [battleOneStatus, setBattleOneStatus] = useState('BATTLE ONE >>> FIGHT!')
+
+  const scorePlusOne = ({ target: { value, name } }) => {
+    if (name === 'paulScore') {
+      setPaulScore(parseInt(value) + 1)
+    } else {
+      setMarkScore(parseInt(value) + 1)
+    }
+    localStorage.setItem(name, parseInt(value) + 1)
+  }
 
   return (
     <Wrapper>
@@ -78,8 +86,8 @@ const Home = () => {
       </VsSection>
 
       <VsSection>
-        <button>test paul score</button>
-        <button>test mark score</button>
+        <button onClick={scorePlusOne} value={paulScore} name="paulScore">test paul score</button>
+        <button onClick={scorePlusOne} value={markScore} name="markScore">test mark score</button>
       </VsSection>
 
       <br/>

@@ -11,10 +11,6 @@ const VsSection = styled.section`
   align-items: center
 `
 
-
-
-
-
 const Home = () => {
   
   const [paulScore, setPaulScore] = localStorage.getItem('paulScore') ? useState(localStorage.getItem('paulScore')) : useState(0)

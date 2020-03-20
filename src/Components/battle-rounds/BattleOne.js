@@ -15,12 +15,22 @@ const ImageGrid = styled.div`
 
 const ImageSquare = styled.div`
   flex: 0 0 25%;
-  border: 1px solid white;
+  border: ${(props) => props.toggled ? '1px solid #61f26f' : '1px solid white'};
+  box-shadow: ${(props) => props.toggled ? '0 0 0 4px #61f26f' : ''};
 `
 
 const BattleOne = () => {
-  const [gridList, setGridList] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]) 
+  // const [gridList, setGridList] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) 
   const [correctAnswer, setCorrectAnswer] = useState([3, 7, 10, 11, 13, 14, 15])
+  const [toggled, setToggled] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+
+  const toggle = ({ target: { id } }) => {
+    console.log(id)
+    const newToggled = [ ...toggled ]
+    newToggled[id] = !newToggled[id]
+    setToggled(newToggled)
+    console.log(newToggled)
+  }
 
   return (
     <Wrapper>
@@ -29,10 +39,12 @@ const BattleOne = () => {
       <Paragraph>Select all squares containing a best boy:</Paragraph>
       <ImageGrid>
         {
-          gridList.map((square, i) => (
+          toggled.map((square, i) => (
             <ImageSquare 
               key={i}
               id={i}
+              toggled={toggled[i]}
+              onClick={toggle}
             />
           ))
         }

@@ -22,10 +22,10 @@ const ImageSquare = styled.div`
 const BattleOne = () => {
   const [images, setImages] = useState({ 
     imageOne: 'url("assets/superman-and-superboy.jpeg")',
-    imageTwo: '',
-    imageThree: ''
+    imageTwo: 'url("assets/team-athens.jpg")',
+    imageThree: 'url("assets/family1.jpg")'
   })
-  const [chosenImage, setChosenImage] = useState(images.imageOne)
+  const [chosenImage, setChosenImage] = useState(images.imageThree)
 
   const [imageOneAnswer, setImageOneAnswer] = useState([3, 7, 10, 11, 13, 14, 15])
   

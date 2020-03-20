@@ -20,14 +20,26 @@ const ImageSquare = styled.div`
 `
 
 const BattleOne = () => {
-  const [images, setImages] = useState({ 
-    imageOne: 'url("assets/superman-and-superboy.jpeg")',
-    imageTwo: 'url("assets/team-athens.jpg")',
-    imageThree: 'url("assets/family1.jpg")'
-  })
-  const [chosenImage, setChosenImage] = useState(images.imageThree)
+  const [images, setImages] = useState([ 
+    'url("assets/superman-and-superboy.jpeg")',
+    'url("assets/team-athens.jpg")',
+    'url("assets/family1.jpg")',
+    'url("assets/elves.jpg")',
+    'url("assets/dad-n-boys.jpg")',
+    'url("assets/moustaches.jpg")',
+    'url("assets/christmas.jpg")'
+  ])
+  const [chosenImage, setChosenImage] = useState(images[0])
 
-  const [imageOneAnswer, setImageOneAnswer] = useState([3, 7, 10, 11, 13, 14, 15])
+  const [imageAnswers, setImageAnswers] = useState([
+    [3, 7, 10, 11, 13, 14, 15],
+    [3, 4, 7, 8, 11, 12, 15],
+    [1, 2, 5, 9, 13, 14],
+    [1, 2, 5, 6, 9, 10, 13, 14],
+    [2, 5, 6, 9, 10, 13, 14],
+    [1, 2, 5, 6, 9, 10, 13, 14],
+    [1, 4, 6, 9, 10, 13, 14]
+  ])
   
   const [toggled, setToggled] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
 
@@ -35,6 +47,18 @@ const BattleOne = () => {
     const newToggled = [ ...toggled ]
     newToggled[id] = !newToggled[id]
     setToggled(newToggled)
+  }
+
+  const shuffle = () => {
+    console.log(images.length)
+    const idx = Math.floor(Math.random() * images.length)
+    console.log(idx)
+    if (chosenImage !== images[idx]) {
+      setChosenImage(images[idx])
+    } else {
+      shuffle()
+    }
+    setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
   }
 
   return (
@@ -55,7 +79,7 @@ const BattleOne = () => {
         }
       </ImageGrid>
       <br/>
-      <Button>Shuffle image</Button>
+      <Button onClick={shuffle}>Shuffle image</Button>
       <Button>Submit</Button>
 
     </Wrapper>

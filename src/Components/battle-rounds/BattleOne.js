@@ -6,7 +6,7 @@ import { Wrapper, Title, Paragraph, Button } from '../../styles/commonStyles'
 const ImageGrid = styled.div`
   width: 340px;
   height: 340px;
-  background-image: url("assets/superman-and-superboy.jpeg");
+  background-image: ${(props)=> props.background};
   background-size: cover;
   margin-top: 20px;
   display: flex;
@@ -16,20 +16,25 @@ const ImageGrid = styled.div`
 const ImageSquare = styled.div`
   flex: 0 0 25%;
   border: ${(props) => props.toggled ? '1px solid #61f26f' : '1px solid white'};
-  box-shadow: ${(props) => props.toggled ? '0 0 0 4px #61f26f' : ''};
+  box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
 `
 
 const BattleOne = () => {
-  // const [gridList, setGridList] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) 
-  const [correctAnswer, setCorrectAnswer] = useState([3, 7, 10, 11, 13, 14, 15])
+  const [images, setImages] = useState({ 
+    imageOne: 'url("assets/superman-and-superboy.jpeg")',
+    imageTwo: '',
+    imageThree: ''
+  })
+  const [chosenImage, setChosenImage] = useState(images.imageOne)
+
+  const [imageOneAnswer, setImageOneAnswer] = useState([3, 7, 10, 11, 13, 14, 15])
+  
   const [toggled, setToggled] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
 
   const toggle = ({ target: { id } }) => {
-    console.log(id)
     const newToggled = [ ...toggled ]
     newToggled[id] = !newToggled[id]
     setToggled(newToggled)
-    console.log(newToggled)
   }
 
   return (
@@ -37,7 +42,7 @@ const BattleOne = () => {
       <Title>BATTLE ONE!!!</Title>
 
       <Paragraph>Select all squares containing a best boy:</Paragraph>
-      <ImageGrid>
+      <ImageGrid background={chosenImage}>
         {
           toggled.map((square, i) => (
             <ImageSquare 
@@ -49,7 +54,9 @@ const BattleOne = () => {
           ))
         }
       </ImageGrid>
-      
+      <br/>
+      <Button>Shuffle image</Button>
+      <Button>Submit</Button>
 
     </Wrapper>
   )

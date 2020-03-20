@@ -40,7 +40,10 @@ const BattleOne = () => {
     [1, 2, 5, 6, 9, 10, 13, 14],
     [1, 4, 6, 9, 10, 13, 14]
   ])
-  
+
+  const [submitted, setSubmitted] = useState(false)
+  const [correct, setCorrect] = useState(false)
+
   const [toggled, setToggled] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
 
   const toggle = ({ target: { id } }) => {

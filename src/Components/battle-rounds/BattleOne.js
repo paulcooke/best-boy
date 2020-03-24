@@ -17,10 +17,11 @@ const ImageSquare = styled.div`
   flex: 0 0 25%;
   border: ${(props) => props.toggled ? '1px solid #61f26f' : '1px solid white'};
   box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
+  background: ${(props) => props.solved ? '' : ''}
 `
 
 const AnswerParagraph = styled(Paragraph)`
-  color: ${(props) => props.color}
+  color: ${(props) => props.color}; 
 `
 
 const SideBySideButtons = styled.div`
@@ -38,13 +39,14 @@ const BattleOne = () => {
     { url: 'url("assets/superman-and-superboy.jpeg")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
     { url: 'url("assets/team-athens.jpg")',             answer: [2, 3, 6, 7, 10, 11, 14],    solved: false },
     { url: 'url("assets/family1.jpg")',                 answer: [0, 1, 4, 8, 12, 13],        solved: false },
-    { url: 'url("assets/elves.jpg")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13], solved: false },
-    { url: 'url("assets/dad-n-boys.jpg")',              answer: [1, 4, 5, 8, 9, 12, 13],    solved: false },
-    { url: 'url("assets/moustaches.jpg")',              answer: [0, 1, 4, 5, 8, 9, 12, 13], solved: false },
-    { url: 'url("assets/christmas.jpg")',               answer: [0, 4, 5, 8, 9, 12, 13],    solved: false }
+    { url: 'url("assets/elves.jpg")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
+    { url: 'url("assets/dad-n-boys.jpg")',              answer: [1, 4, 5, 8, 9, 12, 13],     solved: false },
+    { url: 'url("assets/moustaches.jpg")',              answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
+    { url: 'url("assets/christmas.jpg")',               answer: [0, 4, 5, 8, 9, 12, 13],     solved: false }
   ])
 
   const [chosenImage, setChosenImage] = useState(images[0].url)
+  const [thisImage, setThisImage] = useState(images[0])
   const [submitResult, setSubmitResult] = useState('...or submit when ready!')
   const [answerColor, setAnswerColor] = useState('black')
 
@@ -81,6 +83,7 @@ const BattleOne = () => {
     }
     setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
     setCurrentGuess([])
+    setThisImage(images[idx])
   }
 
   const reset = () => {
@@ -95,15 +98,15 @@ const BattleOne = () => {
   const answerCheck = () => {
     const guess = new Set(currentGuess)
     // console.log('guess', guess)
-    const thisImage = images.find(x => setCompare(new Set(x.answer), guess))
-    if (thisImage) {
+    const imageMatches = setCompare(new Set(thisImage.answer), guess)
+    if (imageMatches) {
       setSubmitResult('Best boy found!')
       setAnswerColor('green')
     } else {
       setSubmitResult('Error: best boy not found')
       setAnswerColor('red')
     } 
-    if (thisImage && !thisImage.solved) thisImage.solved = !thisImage.solved
+    if (imageMatches && !thisImage.solved) thisImage.solved = !thisImage.solved
     // console.log("are we solved?", thisImage)
   }
 
@@ -126,8 +129,8 @@ const BattleOne = () => {
       </ImageGrid>
       <br/>
       <SideBySideButtons>
-        <Button onClick={shuffle}>Shuffle image</Button>
-        <Button onClick={reset}>Reset image</Button>
+        <Button onClick={shuffle}>Shuffle</Button>
+        <Button onClick={reset}>Reset</Button>
       </SideBySideButtons>
       
       <AnswerParagraph color={answerColor}>{submitResult}</AnswerParagraph>

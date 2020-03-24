@@ -7,11 +7,10 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    padding-top: 20px;
     max-width: 600px;
   `
 
-const Title = styled.h1`
+const Title = styled.h3`
   color: #282c34;
   text-align: center;
   padding: 0 2px;
@@ -21,6 +20,7 @@ const Paragraph = styled.p`
   color: #282c34;
   text-align: center;
   padding: 0 2px;
+  font-size: small;
 `
 
 const ImageBox = styled.div`
@@ -35,9 +35,9 @@ const Image = styled.img`
 
 const Button = styled.button`
   font-family: 'Press Start 2P', cursive;
-  font-size: 14px;
+  font-size: small;
   background-color: orange;
-  padding: 15px;
+  padding: 6px;
 `
 
 export {

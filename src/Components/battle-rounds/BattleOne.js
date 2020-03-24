@@ -17,7 +17,7 @@ const ImageSquare = styled.div`
   flex: 0 0 25%;
   border: ${(props) => props.toggled ? '1px solid #61f26f' : '1px solid white'};
   box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
-  background: ${(props) => props.solved ? '' : ''}
+  background-color: ${(props) => props.solved ? 'white' : ''}
 `
 
 const AnswerParagraph = styled(Paragraph)`
@@ -84,11 +84,16 @@ const BattleOne = () => {
     setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
     setCurrentGuess([])
     setThisImage(images[idx])
+    setSubmitResult('...or submit when ready!')
+    setAnswerColor('black')
   }
 
+  // should reset make the solved field false?
   const reset = () => {
     setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
     setCurrentGuess([])
+    setSubmitResult('...or submit when ready!')
+    setAnswerColor('black')
   }
 
   const setCompare = (setOne, setTwo) => {
@@ -123,6 +128,7 @@ const BattleOne = () => {
               id={i}
               toggled={toggled[i]}
               onClick={toggle}
+              solved={thisImage.solved && !currentGuess.includes(i)}
             />
           ))
         }

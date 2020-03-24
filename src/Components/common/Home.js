@@ -52,8 +52,8 @@ const Home = () => {
       </VsSection>
       
       <VsSection>
-        <Paragraph>Score: {paulScore}</Paragraph>
-        <Paragraph>Score: {markScore}</Paragraph>
+        <Paragraph>Paul: {paulScore}</Paragraph>
+        <Paragraph>Mark: {markScore}</Paragraph>
       </VsSection>
 
       <VsSection>

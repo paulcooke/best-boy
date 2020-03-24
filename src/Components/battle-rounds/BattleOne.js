@@ -24,15 +24,16 @@ const BattleOne = () => {
 
   const [images, setImages] = useState([
     { url: 'url("assets/superman-and-superboy.jpeg")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
-    { url: 'url("assets/team-athens.jpg")',             answer: [3, 4, 7, 8, 11, 12, 15],    solved: false },
-    { url: 'url("assets/family1.jpg")',                 answer: [1, 2, 5, 9, 13, 14],        solved: false },
-    { url: 'url("assets/elves.jpg")',                   answer: [1, 2, 5, 6, 9, 10, 13, 14], solved: false },
-    { url: 'url("assets/dad-n-boys.jpg")',              answer: [2, 5, 6, 9, 10, 13, 14],    solved: false },
-    { url: 'url("assets/moustaches.jpg")',              answer: [1, 2, 5, 6, 9, 10, 13, 14], solved: false },
-    { url: 'url("assets/christmas.jpg")',               answer: [1, 4, 6, 9, 10, 13, 14],    solved: false }
+    { url: 'url("assets/team-athens.jpg")',             answer: [2, 3, 6, 7, 10, 11, 14],    solved: false },
+    { url: 'url("assets/family1.jpg")',                 answer: [0, 1, 4, 8, 12, 13],        solved: false },
+    { url: 'url("assets/elves.jpg")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13], solved: false },
+    { url: 'url("assets/dad-n-boys.jpg")',              answer: [1, 4, 5, 8, 9, 12, 13],    solved: false },
+    { url: 'url("assets/moustaches.jpg")',              answer: [0, 1, 4, 5, 8, 9, 12, 13], solved: false },
+    { url: 'url("assets/christmas.jpg")',               answer: [0, 4, 5, 8, 9, 12, 13],    solved: false }
   ])
 
   const [chosenImage, setChosenImage] = useState(images[0].url)
+  const [submitResult, setSubmitResult] = useState('...or submit when ready!')
 
   const [submitted, setSubmitted] = useState(false)
   const [correct, setCorrect] = useState(false)
@@ -69,8 +70,25 @@ const BattleOne = () => {
     setCurrentGuess([])
   }
 
+  const setCompare = (setOne, setTwo) => {
+    return setOne.size === setTwo.size && [...setOne].every(y => setTwo.has(y))
+  }
+
   const answerCheck = () => {
-    // for comparing current guess with the answer on submit
+    const guess = new Set(currentGuess)
+    console.log('guess', guess)
+    const thisImage = images.find(x => setCompare(new Set(x.answer), guess))
+    thisImage ? setSubmitResult('Best boy found!') : setSubmitResult('Error: best boy not found')
+    if (thisImage && !thisImage.solved) thisImage.solved = !thisImage.solved
+    console.log("are we solved?", thisImage)
+    
+    // console.log(images.find(x => setCompare(new Set(x.answer), guess)).solved !== images.find(x => setCompare(new Set(x.answer), guess)).solved)
+    
+    
+    // if (images.find(x => setCompare(new Set(x.answer), guess))) {
+    //   console.log('matched again!!!')
+
+    // }
   }
 
   return (
@@ -92,8 +110,8 @@ const BattleOne = () => {
       </ImageGrid>
       <br/>
       <Button onClick={shuffle}>Shuffle image</Button>
-      <Paragraph>...or submit when ready!</Paragraph>
-      <Button>Submit</Button>
+      <Paragraph>{submitResult}</Paragraph>
+      <Button onClick={answerCheck}>Submit</Button>
 
     </Wrapper>
   )

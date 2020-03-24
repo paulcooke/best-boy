@@ -23,13 +23,13 @@ const ImageSquare = styled.div`
 const BattleOne = () => {
 
   const [images, setImages] = useState([
-    { url: 'url("assets/superman-and-superboy.jpeg")', answer: [3, 7, 10, 11, 13, 14, 15] },
-    { url: 'url("assets/team-athens.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
-    { url: 'url("assets/family1.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
-    { url: 'url("assets/elves.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
-    { url: 'url("assets/dad-n-boys.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
-    { url: 'url("assets/moustaches.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
-    { url: 'url("assets/christmas.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] }
+    { url: 'url("assets/superman-and-superboy.jpeg")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
+    { url: 'url("assets/team-athens.jpg")',             answer: [3, 4, 7, 8, 11, 12, 15],    solved: false },
+    { url: 'url("assets/family1.jpg")',                 answer: [1, 2, 5, 9, 13, 14],        solved: false },
+    { url: 'url("assets/elves.jpg")',                   answer: [1, 2, 5, 6, 9, 10, 13, 14], solved: false },
+    { url: 'url("assets/dad-n-boys.jpg")',              answer: [2, 5, 6, 9, 10, 13, 14],    solved: false },
+    { url: 'url("assets/moustaches.jpg")',              answer: [1, 2, 5, 6, 9, 10, 13, 14], solved: false },
+    { url: 'url("assets/christmas.jpg")',               answer: [1, 4, 6, 9, 10, 13, 14],    solved: false }
   ])
 
   const [chosenImage, setChosenImage] = useState(images[0].url)
@@ -47,7 +47,6 @@ const BattleOne = () => {
     makeCurrentGuess(id)
   }
 
-  //**** one step behind unhighlights and adds to current guess
   const makeCurrentGuess = (cell) => {
     if (!currentGuess.includes(parseInt(cell))) setCurrentGuess([ ...currentGuess, parseInt(cell)])
     if (currentGuess.includes(parseInt(cell))) {

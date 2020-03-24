@@ -6,7 +6,7 @@ import { Wrapper, Title, Paragraph, Button } from '../../styles/commonStyles'
 const ImageGrid = styled.div`
   width: 340px;
   height: 340px;
-  background-image: ${(props)=> props.background};
+  background-image: ${(props) => props.background};
   background-size: cover;
   margin-top: 20px;
   display: flex;
@@ -17,6 +17,18 @@ const ImageSquare = styled.div`
   flex: 0 0 25%;
   border: ${(props) => props.toggled ? '1px solid #61f26f' : '1px solid white'};
   box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
+`
+
+const AnswerParagraph = styled(Paragraph)`
+  color: ${(props) => props.color}
+`
+
+const SideBySideButtons = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center
 `
 
 // Main function for the component
@@ -34,6 +46,7 @@ const BattleOne = () => {
 
   const [chosenImage, setChosenImage] = useState(images[0].url)
   const [submitResult, setSubmitResult] = useState('...or submit when ready!')
+  const [answerColor, setAnswerColor] = useState('black')
 
   const [submitted, setSubmitted] = useState(false)
   const [correct, setCorrect] = useState(false)
@@ -70,25 +83,28 @@ const BattleOne = () => {
     setCurrentGuess([])
   }
 
+  const reset = () => {
+    setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+    setCurrentGuess([])
+  }
+
   const setCompare = (setOne, setTwo) => {
     return setOne.size === setTwo.size && [...setOne].every(y => setTwo.has(y))
   }
 
   const answerCheck = () => {
     const guess = new Set(currentGuess)
-    console.log('guess', guess)
+    // console.log('guess', guess)
     const thisImage = images.find(x => setCompare(new Set(x.answer), guess))
-    thisImage ? setSubmitResult('Best boy found!') : setSubmitResult('Error: best boy not found')
+    if (thisImage) {
+      setSubmitResult('Best boy found!')
+      setAnswerColor('green')
+    } else {
+      setSubmitResult('Error: best boy not found')
+      setAnswerColor('red')
+    } 
     if (thisImage && !thisImage.solved) thisImage.solved = !thisImage.solved
-    console.log("are we solved?", thisImage)
-    
-    // console.log(images.find(x => setCompare(new Set(x.answer), guess)).solved !== images.find(x => setCompare(new Set(x.answer), guess)).solved)
-    
-    
-    // if (images.find(x => setCompare(new Set(x.answer), guess))) {
-    //   console.log('matched again!!!')
-
-    // }
+    // console.log("are we solved?", thisImage)
   }
 
   return (
@@ -109,8 +125,12 @@ const BattleOne = () => {
         }
       </ImageGrid>
       <br/>
-      <Button onClick={shuffle}>Shuffle image</Button>
-      <Paragraph>{submitResult}</Paragraph>
+      <SideBySideButtons>
+        <Button onClick={shuffle}>Shuffle image</Button>
+        <Button onClick={reset}>Reset image</Button>
+      </SideBySideButtons>
+      
+      <AnswerParagraph color={answerColor}>{submitResult}</AnswerParagraph>
       <Button onClick={answerCheck}>Submit</Button>
 
     </Wrapper>

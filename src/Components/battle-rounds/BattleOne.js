@@ -21,26 +21,18 @@ const ImageSquare = styled.div`
 
 // Main function for the component
 const BattleOne = () => {
-  const [images, setImages] = useState([ 
-    'url("assets/superman-and-superboy.jpeg")',
-    'url("assets/team-athens.jpg")',
-    'url("assets/family1.jpg")',
-    'url("assets/elves.jpg")',
-    'url("assets/dad-n-boys.jpg")',
-    'url("assets/moustaches.jpg")',
-    'url("assets/christmas.jpg")'
-  ])
-  const [chosenImage, setChosenImage] = useState(images[0])
 
-  const [imageAnswers, setImageAnswers] = useState([
-    [3, 7, 10, 11, 13, 14, 15],
-    [3, 4, 7, 8, 11, 12, 15],
-    [1, 2, 5, 9, 13, 14],
-    [1, 2, 5, 6, 9, 10, 13, 14],
-    [2, 5, 6, 9, 10, 13, 14],
-    [1, 2, 5, 6, 9, 10, 13, 14],
-    [1, 4, 6, 9, 10, 13, 14]
+  const [images, setImages] = useState([
+    { url: 'url("assets/superman-and-superboy.jpeg")', answer: [3, 7, 10, 11, 13, 14, 15] },
+    { url: 'url("assets/team-athens.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
+    { url: 'url("assets/family1.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
+    { url: 'url("assets/elves.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
+    { url: 'url("assets/dad-n-boys.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
+    { url: 'url("assets/moustaches.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] },
+    { url: 'url("assets/christmas.jpg")', answer: [3, 7, 10, 11, 13, 14, 15] }
   ])
+
+  const [chosenImage, setChosenImage] = useState(images[0].url)
 
   const [submitted, setSubmitted] = useState(false)
   const [correct, setCorrect] = useState(false)
@@ -69,8 +61,8 @@ const BattleOne = () => {
     console.log(images.length)
     const idx = Math.floor(Math.random() * images.length)
     console.log(idx)
-    if (chosenImage !== images[idx]) {
-      setChosenImage(images[idx])
+    if (chosenImage !== images[idx].url) {
+      setChosenImage(images[idx].url)
     } else {
       shuffle()
     }

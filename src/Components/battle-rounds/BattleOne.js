@@ -19,6 +19,7 @@ const ImageSquare = styled.div`
   box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
 `
 
+// Main function for the component
 const BattleOne = () => {
   const [images, setImages] = useState([ 
     'url("assets/superman-and-superboy.jpeg")',
@@ -44,12 +45,24 @@ const BattleOne = () => {
   const [submitted, setSubmitted] = useState(false)
   const [correct, setCorrect] = useState(false)
 
+  const [currentGuess, setCurrentGuess] = useState([])
   const [toggled, setToggled] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
 
   const toggle = ({ target: { id } }) => {
     const newToggled = [ ...toggled ]
     newToggled[id] = !newToggled[id]
-    setToggled(newToggled)
+    setToggled(newToggled)   
+    makeCurrentGuess(id)
+  }
+
+  //**** one step behind unhighlights and adds to current guess
+  const makeCurrentGuess = (cell) => {
+    if (!currentGuess.includes(parseInt(cell))) setCurrentGuess([ ...currentGuess, parseInt(cell)])
+    if (currentGuess.includes(parseInt(cell))) {
+      const copyCurrentGuess = [...currentGuess]
+      copyCurrentGuess.splice(copyCurrentGuess.indexOf(parseInt(cell)), 1)
+      setCurrentGuess(copyCurrentGuess)
+    }
   }
 
   const shuffle = () => {
@@ -62,6 +75,11 @@ const BattleOne = () => {
       shuffle()
     }
     setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+    setCurrentGuess([])
+  }
+
+  const answerCheck = () => {
+    // for comparing current guess with the answer on submit
   }
 
   return (
@@ -83,6 +101,7 @@ const BattleOne = () => {
       </ImageGrid>
       <br/>
       <Button onClick={shuffle}>Shuffle image</Button>
+      <Paragraph>...or submit when ready!</Paragraph>
       <Button>Submit</Button>
 
     </Wrapper>

@@ -15,7 +15,7 @@ const ImageGrid = styled.div`
 
 const ImageSquare = styled.div`
   flex: 0 0 25%;
-  border: ${(props) => props.toggled ? '1px solid #61f26f' : '1px solid white'};
+  border: ${(props) => props.solved ? 'none' : props.toggled ? '1px solid #61f26f' : '1px solid white'}};
   box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
   background-color: ${(props) => props.solved ? 'white' : ''}
 `
@@ -73,20 +73,19 @@ const BattleOne = () => {
   }
 
   const shuffle = () => {
-    console.log(images.length)
     const idx = Math.floor(Math.random() * images.length)
-    console.log(idx)
+    console.log('image index =', idx)
     if (chosenImage !== images[idx].url) {
       setChosenImage(images[idx].url)
+      setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+      setCurrentGuess([])
+      setThisImage(images[idx])
+      setSubmitResult('...or submit when ready!')
+      setAnswerColor('black')
+      thisImage.solved = false
     } else {
       shuffle()
     }
-    setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
-    setCurrentGuess([])
-    setThisImage(images[idx])
-    setSubmitResult('...or submit when ready!')
-    setAnswerColor('black')
-    thisImage.solved = false
     console.log('current guess on shuffle', currentGuess)
   }
 

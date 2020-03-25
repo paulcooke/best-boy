@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { paulScore, markScore } from '../common/Home'
+
 import { Wrapper, Title, Paragraph, Button } from '../../styles/commonStyles'
+
 // use props to randomise image? make the props the url, use an array and random with a button
 const ImageGrid = styled.div`
   width: 340px;
@@ -12,18 +15,15 @@ const ImageGrid = styled.div`
   display: flex;
   flex-flow: wrap;
 `
-
 const ImageSquare = styled.div`
   flex: 0 0 25%;
   border: ${(props) => props.solved ? 'none' : props.toggled ? '1px solid #61f26f' : '1px solid white'}};
   box-shadow: ${(props) => props.toggled ? '0 0 0 2px #61f26f' : ''};
   background-color: ${(props) => props.solved ? 'white' : ''}
 `
-
 const AnswerParagraph = styled(Paragraph)`
   color: ${(props) => props.color}; 
 `
-
 const SideBySideButtons = styled.div`
   width: 80%;
   display: flex;

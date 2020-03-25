@@ -86,14 +86,16 @@ const BattleOne = () => {
     setThisImage(images[idx])
     setSubmitResult('...or submit when ready!')
     setAnswerColor('black')
+    thisImage.solved = false
+    console.log('current guess on shuffle', currentGuess)
   }
 
-  // should reset make the solved field false?
   const reset = () => {
     setToggled([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
     setCurrentGuess([])
     setSubmitResult('...or submit when ready!')
     setAnswerColor('black')
+    thisImage.solved = false
   }
 
   const setCompare = (setOne, setTwo) => {
@@ -101,7 +103,8 @@ const BattleOne = () => {
   }
 
   const answerCheck = () => {
-    const guess = new Set(currentGuess)
+    const guess = new Set(currentGuess.sort((a,b) => a - b))
+    console.log(thisImage.answer)
     // console.log('guess', guess)
     const imageMatches = setCompare(new Set(thisImage.answer), guess)
     if (imageMatches) {
@@ -113,6 +116,7 @@ const BattleOne = () => {
     } 
     if (imageMatches && !thisImage.solved) thisImage.solved = !thisImage.solved
     // console.log("are we solved?", thisImage)
+    console.log('current guess on submit', guess)
   }
 
   return (

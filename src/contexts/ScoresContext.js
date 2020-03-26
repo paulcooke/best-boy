@@ -1,22 +1,29 @@
 import React, { createContext, useReducer } from 'react'
 
-const initialScores = {}
-const scores = createContext(initialScores)
-const { Provider } = scores
+// const initialScores = {}
+const ScoresContext = createContext()
+// const { Provider } = ScoresContext
 
 
 
-const ScoresContextProvider = () => {
+const ScoresContextProvider = ({ children }) => {
+
+  const scores = {
+    paul: 0,
+    mark: 0, 
+    setScore: () => {},
+    reset: () => {}
+  }
 
   return (
-    <ScoresContext.Provider>
-
+    <ScoresContext.Provider value={scores}>
+      {children}
     </ScoresContext.Provider>
   )
 
 }
 
-export { scores, ScoresContextProvider }
+export { ScoresContext, ScoresContextProvider }
 
 
 

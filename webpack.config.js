@@ -23,7 +23,7 @@ module.exports = {
     open: true,
     port: 4000,
     watchContentBase: true,
-    historyApiFallback: true,
+    historyApiFallback: true
     // proxy: {
     //   '/api': 'http://localhost:8000' // to prevent cors errors, our requests in this app should just go to /api
     // }

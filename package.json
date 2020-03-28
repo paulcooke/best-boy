@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development",
     "build": "webpack -p",
-    "start": "node index"
+    "start": "start"
   },
   "engines": {
     "yarn": "1.17.3",

@@ -1,13 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/app.js',
-  context: path.resolve(__dirname, 'frontend'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'frontend/dist'),
+    path: path.resolve('frontend/dist'),
     publicPath: '/'
   },
   module: {
@@ -24,9 +24,9 @@ module.exports = {
     port: 4000,
     watchContentBase: true,
     historyApiFallback: true,
-    proxy: {
-      '/api': 'http://localhost:8000' // to prevent cors errors, our requests in this app should just go to /api
-    }
+    // proxy: {
+    //   '/api': 'http://localhost:8000' // to prevent cors errors, our requests in this app should just go to /api
+    // }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -34,6 +34,9 @@ module.exports = {
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: './src/assets', to: 'assets' }
+    ])
   ]
 }

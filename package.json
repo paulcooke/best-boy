@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack-dev-server --mode=development"
+    "serve": "webpack-dev-server --mode=development",
+    "build": "webpack -p",
+    "start": "node src/app.js"
   },
   "repository": "git@github.com:paulcooke/best-boy.git",
   "author": "Paul Cooke <paulgfcooke@gmail.com>",

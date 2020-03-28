@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/app.js',
+  context: path.resolve(__dirname, 'frontend'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve('dist'),
+    path: path.resolve(__dirname, 'frontend/dist'),
     publicPath: '/'
   },
   module: {
@@ -20,9 +21,12 @@ module.exports = {
     contentBase: path.resolve('src'),
     hot: true,
     open: true,
-    port: 8000,
+    port: 4000,
     watchContentBase: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:8000' // to prevent cors errors, our requests in this app should just go to /api
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

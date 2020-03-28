@@ -150,7 +150,7 @@ const BattleOne = () => {
           <br/>
           <SideBySideButtons>
             <Button onClick={shuffle}>Shuffle</Button>
-            <Button onClick={reset}>Reset</Button>
+            <Button onClick={reset}>Clear</Button>
           </SideBySideButtons>
           
           <AnswerParagraph color={answerColor}>{submitResult}</AnswerParagraph>

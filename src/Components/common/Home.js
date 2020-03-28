@@ -44,11 +44,6 @@ const Home = () => {
             <Paragraph>Mark: {(JSON.parse(localStorage.getItem('currentScores')) && JSON.parse(localStorage.getItem('currentScores')).mark) || value.scores.mark}</Paragraph>
           </VsSection>
 
-          <VsSection>
-            <Button onClick={() => value.setScores('paul')}>Paul test</Button>
-            <Button onClick={() => value.setScores('mark')}>Mark test</Button>
-          </VsSection>
-
           <br/>
           <a href="/battle-one"><Button>{battleOneStatus}</Button></a>
           <br/>

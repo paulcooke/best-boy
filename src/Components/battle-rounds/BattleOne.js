@@ -36,13 +36,13 @@ const BattleOne = () => {
   const remoteSetScores = useContext(ScoresContext).setScores
 
   const [images, setImages] = useState([
-    { url: 'url("assets/superman-and-superboy.jpeg")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
-    { url: 'url("assets/team-athens.jpg")',             answer: [2, 3, 6, 7, 10, 11, 14],    solved: false },
-    { url: 'url("assets/family1.jpg")',                 answer: [0, 1, 4, 8, 12, 13],        solved: false },
-    { url: 'url("assets/elves.jpg")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
-    { url: 'url("assets/dad-n-boys.jpg")',              answer: [1, 4, 5, 8, 9, 12, 13],     solved: false },
-    { url: 'url("assets/moustaches.jpg")',              answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
-    { url: 'url("assets/christmas.jpg")',               answer: [0, 4, 5, 8, 9, 12, 13],     solved: false }
+    { url: 'url("https://bit.ly/2QV2TDH")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
+    { url: 'url("https://bit.ly/33Qh0iS")',             answer: [2, 3, 6, 7, 10, 11, 14],    solved: false },
+    { url: 'url("https://bit.ly/33YWgW7")',                 answer: [0, 1, 4, 8, 12, 13],        solved: false },
+    { url: 'url("https://bit.ly/33TfgoO")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
+    { url: 'url("https://bit.ly/2ULPJK3")',              answer: [1, 4, 5, 8, 9, 12, 13],     solved: false },
+    { url: 'url("https://bit.ly/33T2zug")',              answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
+    { url: 'url("https://bit.ly/3arfYwd")',               answer: [0, 4, 5, 8, 9, 12, 13],     solved: false }
   ])
 
   const [chosenImage, setChosenImage] = useState(images[0].url)

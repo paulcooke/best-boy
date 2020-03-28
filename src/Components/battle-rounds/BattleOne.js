@@ -36,15 +36,21 @@ const BattleOne = () => {
   const remoteSetScores = useContext(ScoresContext).setScores
 
   const [images, setImages] = useState([
-    { url: 'url("https://bit.ly/2UHYR2y")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
-    { url: 'url("https://bit.ly/33Qh0iS")',             answer: [2, 3, 6, 7, 10, 11, 14],    solved: false },
-    { url: 'url("https://bit.ly/33YWgW7")',                 answer: [0, 1, 4, 8, 12, 13],        solved: false },
-    { url: 'url("https://bit.ly/33TfgoO")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
-    { url: 'url("https://bit.ly/2ULPJK3")',              answer: [1, 4, 5, 8, 9, 12, 13],     solved: false },
-    { url: 'url("https://bit.ly/33T2zug")',              answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },
-    { url: 'url("https://bit.ly/3arfYwd")',               answer: [0, 4, 5, 8, 9, 12, 13],     solved: false }
+    { url: 'url("https://bit.ly/2UHYR2y")',  answer: [3, 7, 10, 11, 13, 14, 15],        solved: false },
+    { url: 'url("https://bit.ly/33Qh0iS")',  answer: [2, 3, 6, 7, 10, 11, 14],          solved: false },
+    { url: 'url("https://bit.ly/33YWgW7")',  answer: [0, 1, 4, 8, 12, 13],              solved: false },
+    { url: 'url("https://bit.ly/33TfgoO")',  answer: [0, 1, 4, 5, 8, 9, 12, 13],        solved: false },
+    { url: 'url("https://bit.ly/2ULPJK3")',  answer: [1, 4, 5, 8, 9, 12, 13],           solved: false },
+    { url: 'url("https://bit.ly/33T2zug")',  answer: [0, 1, 4, 5, 8, 9, 12, 13],        solved: false },
+    { url: 'url("https://bit.ly/3arfYwd")',  answer: [0, 4, 5, 8, 9, 12, 13],           solved: false },
+    { url: 'url("https://bit.ly/3apYWhP")',  answer: [0, 1, 4, 5, 6, 7, 8, 9, 12, 13],  solved: false },
+    { url: 'url("https://bit.ly/2vWkQu9")',  answer: [4, 5, 8, 9, 12, 13],              solved: false },
+    { url: 'url("https://bit.ly/33QgyRG")',  answer: [5, 6, 9, 10, 13, 14],             solved: false },
+    { url: 'url("https://bit.ly/2xzscEA")',  answer: [1, 5],                            solved: false },
+    { url: 'url("https://bit.ly/2wAs2wA")',  answer: [2, 3, 6, 7, 10, 11, 14, 15],      solved: false },
+    { url: 'url("https://bit.ly/2xzsBa4")',  answer: [6, 7, 10, 11],                    solved: false }
   ])
-
+  
   const [chosenImage, setChosenImage] = useState(images[0].url)
   const [thisImage, setThisImage] = useState(images[0])
   const [submitResult, setSubmitResult] = useState('...or submit when ready!')

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 
-import { paulScore, markScore } from '../common/Home'
-
-import { Wrapper, Title, Paragraph, Button } from '../../styles/commonStyles'
+import ScoresContext from '../../contexts/ScoresContext'
+import { Wrapper, Title, Paragraph, Button, VsSection } from '../../styles/commonStyles'
 
 // use props to randomise image? make the props the url, use an array and random with a button
 const ImageGrid = styled.div`
@@ -34,6 +33,7 @@ const SideBySideButtons = styled.div`
 
 // Main function for the component
 const BattleOne = () => {
+  const remoteSetScores = useContext(ScoresContext).setScores
 
   const [images, setImages] = useState([
     { url: 'url("assets/superman-and-superboy.jpeg")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
@@ -109,6 +109,7 @@ const BattleOne = () => {
     if (imageMatches) {
       setSubmitResult('Best boy found!')
       setAnswerColor('green')
+      remoteSetScores('paul')
     } else {
       setSubmitResult('Error: best boy not found')
       setAnswerColor('red')
@@ -118,34 +119,46 @@ const BattleOne = () => {
     console.log('current guess on submit', guess)
   }
 
+  console.log(ScoresContext)
+
   return (
-    <Wrapper>
-      <Title>BATTLE ONE!!!</Title>
+    <ScoresContext.Consumer>
+      {value => (
+        <Wrapper>
+          <Title>BATTLE ONE!!!</Title>
 
-      <Paragraph>Select all squares containing a best boy:</Paragraph>
-      <ImageGrid background={chosenImage}>
-        {
-          toggled.map((square, i) => (
-            <ImageSquare 
-              key={i}
-              id={i}
-              toggled={toggled[i]}
-              onClick={toggle}
-              solved={thisImage.solved && !currentGuess.includes(i)}
-            />
-          ))
-        }
-      </ImageGrid>
-      <br/>
-      <SideBySideButtons>
-        <Button onClick={shuffle}>Shuffle</Button>
-        <Button onClick={reset}>Reset</Button>
-      </SideBySideButtons>
-      
-      <AnswerParagraph color={answerColor}>{submitResult}</AnswerParagraph>
-      <Button onClick={answerCheck}>Submit</Button>
+          <Paragraph>Select all squares containing a best boy:</Paragraph>
 
-    </Wrapper>
+          <VsSection>
+            <Paragraph>Paul: {(JSON.parse(localStorage.getItem('currentScores')) && JSON.parse(localStorage.getItem('currentScores')).paul) || value.scores.paul}</Paragraph>
+            <Paragraph>Mark: {(JSON.parse(localStorage.getItem('currentScores')) && JSON.parse(localStorage.getItem('currentScores')).mark) || value.scores.mark}</Paragraph>
+          </VsSection>
+
+          <ImageGrid background={chosenImage}>
+            {
+              toggled.map((square, i) => (
+                <ImageSquare 
+                  key={i}
+                  id={i}
+                  toggled={toggled[i]}
+                  onClick={toggle}
+                  solved={thisImage.solved && !currentGuess.includes(i)}
+                />
+              ))
+            }
+          </ImageGrid>
+          <br/>
+          <SideBySideButtons>
+            <Button onClick={shuffle}>Shuffle</Button>
+            <Button onClick={reset}>Reset</Button>
+          </SideBySideButtons>
+          
+          <AnswerParagraph color={answerColor}>{submitResult}</AnswerParagraph>
+          <Button onClick={answerCheck}>Submit</Button>
+
+        </Wrapper>
+      )}
+    </ScoresContext.Consumer>
   )
 }
 

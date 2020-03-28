@@ -6,7 +6,7 @@ export const RESET_SCORES = 'RESET_SCORES'
 const setScores = (name, state) => {
   console.log('setScores called, name:', name)
   console.log('state scores', state.scores)
-  const currentScores = { ...state.scores } || JSON.parse(localStorage.getItem('currentScores'))
+  const currentScores = JSON.parse(localStorage.getItem('currentScores')) || { ...state.scores }
   // console.log('logging current scores', currentScores[name])
   
   if (!currentScores[name]) {

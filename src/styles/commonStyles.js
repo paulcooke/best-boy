@@ -40,11 +40,20 @@ const Button = styled.button`
   padding: 6px;
 `
 
+const VsSection = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center
+`
+
 export {
   Wrapper,
   Title,
   Paragraph,
   ImageBox,
   Image,
-  Button
+  Button,
+  VsSection
 }

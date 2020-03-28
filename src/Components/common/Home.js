@@ -2,15 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import styled from 'styled-components'
 
 import ScoresContext from '../../contexts/ScoresContext'
-import { Wrapper, Title, Paragraph, ImageBox, Image, Button } from '../../styles/commonStyles'
-
-const VsSection = styled.section`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center
-`
+import { Wrapper, Title, Paragraph, ImageBox, Image, Button, VsSection } from '../../styles/commonStyles'
 
 const Home = () => {
   
@@ -48,8 +40,8 @@ const Home = () => {
           </VsSection>
           
           <VsSection>
-            <Paragraph>Paul: {value.scores.paul}</Paragraph>
-            <Paragraph>Mark: {value.scores.mark}</Paragraph>
+            <Paragraph>Paul: {(JSON.parse(localStorage.getItem('currentScores')) && JSON.parse(localStorage.getItem('currentScores')).paul) || value.scores.paul}</Paragraph>
+            <Paragraph>Mark: {(JSON.parse(localStorage.getItem('currentScores')) && JSON.parse(localStorage.getItem('currentScores')).mark) || value.scores.mark}</Paragraph>
           </VsSection>
 
           <VsSection>

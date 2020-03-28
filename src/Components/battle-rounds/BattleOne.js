@@ -36,7 +36,7 @@ const BattleOne = () => {
   const remoteSetScores = useContext(ScoresContext).setScores
 
   const [images, setImages] = useState([
-    { url: 'url("https://bit.ly/2QV2TDH")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
+    { url: 'url("https://bit.ly/2UHYR2y")',  answer: [3, 7, 10, 11, 13, 14, 15],  solved: false },
     { url: 'url("https://bit.ly/33Qh0iS")',             answer: [2, 3, 6, 7, 10, 11, 14],    solved: false },
     { url: 'url("https://bit.ly/33YWgW7")',                 answer: [0, 1, 4, 8, 12, 13],        solved: false },
     { url: 'url("https://bit.ly/33TfgoO")',                   answer: [0, 1, 4, 5, 8, 9, 12, 13],  solved: false },

@@ -31,11 +31,11 @@ const Home = () => {
           
           <VsSection>
             <ImageBox>
-              <Image src="assets/paul.svg" />    
+              <Image src="assets/Paul.svg" />    
             </ImageBox>
             <Paragraph>VS</Paragraph>
             <ImageBox>
-              <Image src="assets/mark.svg" />
+              <Image src="assets/Mark.svg" />
             </ImageBox>
           </VsSection>
           

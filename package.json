@@ -10,7 +10,7 @@
   },
   "engines": {
     "yarn": "1.17.3",
-    "node": "12.9.1"
+    "node": "12.9.x"
   },
   "repository": "git@github.com:paulcooke/best-boy.git",
   "author": "Paul Cooke <paulgfcooke@gmail.com>",

@@ -17,6 +17,13 @@ const Home = () => {
   //   console.log('use effect check', currentScores.scores)
   // }, [])
 
+  const [sound, setSound] = useState(true)
+  
+  const playSound = () => {
+    const toggle = !sound
+    setSound(toggle)
+  }
+
   return (
     <ScoresContext.Consumer>
       {value => (
@@ -48,7 +55,9 @@ const Home = () => {
           <a href="/battle-one"><Button>{battleOneStatus}</Button></a>
           <br/>
           <button onClick={value.resetScores}>reset scores</button>
-
+          <br />
+          
+        
         </Wrapper>
       )}
     </ScoresContext.Consumer>
@@ -58,3 +67,9 @@ const Home = () => {
 }
 
 export default Home
+
+// audio messing
+// <Button>
+//             <audio onClick={ playSound ? () => this.pause() : () => this.play() } volume="0.1" id="theme" loop="true" src="https://zophar.vgmdownloads.com/soundfiles/nintendo-snes-spc/street-fighter-ii/02%20The%20World%20Warrior.mp3" type="audio/mp3"></audio>
+//             <i class="fas fa-music"></i>
+//           </Button>

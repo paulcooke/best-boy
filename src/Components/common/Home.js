@@ -35,7 +35,7 @@ const Home = () => {
             </ImageBox>
             <Paragraph>VS</Paragraph>
             <ImageBox>
-              <Image src="https://bit.ly/2UNH5ep" />
+              <Image src="https://bit.ly/2WSU6pI" />
             </ImageBox>
           </VsSection>
           

@@ -51,8 +51,9 @@ const BattleOne = () => {
     { url: 'url("https://bit.ly/2xzsBa4")',  answer: [6, 7, 10, 11],                    solved: false }
   ])
   
-  const [chosenImage, setChosenImage] = useState(images[Math.floor(Math.random() * images.length)].url)
-  const [thisImage, setThisImage] = useState(images[0])
+  const spinner = Math.floor(Math.random() * images.length)
+  const [chosenImage, setChosenImage] = useState(images[spinner].url)
+  const [thisImage, setThisImage] = useState(images[spinner])
   const [submitResult, setSubmitResult] = useState('...or submit when ready!')
   const [answerColor, setAnswerColor] = useState('black')
 

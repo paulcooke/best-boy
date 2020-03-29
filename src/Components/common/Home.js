@@ -7,15 +7,8 @@ import { Wrapper, Title, Paragraph, ImageBox, Image, Button, VsSection } from '.
 const Home = () => {
   
   const [battleOneStatus, setBattleOneStatus] = useState('BATTLE ONE >>> FIGHT!')
-  // const currentScores = useContext(ScoresContext)
-  // const scores = currentScores
-  // console.log('current scores in state on render', currentScores.scores)
-  console.log(ScoresContext)
-  // const setScore = currentScores.setScore
 
-  // useEffect(() => {
-  //   console.log('use effect check', currentScores.scores)
-  // }, [])
+  console.log(ScoresContext)
 
   const [sound, setSound] = useState(true)
   
@@ -38,11 +31,11 @@ const Home = () => {
           
           <VsSection>
             <ImageBox>
-              <Image src="https://bit.ly/3byWKEU" />    
+              <Image src="https://bit.ly/2y8ZpXt" />    
             </ImageBox>
             <Paragraph>VS</Paragraph>
             <ImageBox>
-              <Image src="https://bit.ly/2vV5QN6" />
+              <Image src="https://bit.ly/2UNH5ep" />
             </ImageBox>
           </VsSection>
           

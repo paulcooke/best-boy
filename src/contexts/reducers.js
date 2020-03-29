@@ -11,7 +11,6 @@ const setScores = (name, state) => {
   
   if (!currentScores[name]) {
     currentScores[name] = 1
-    
   } else {
     currentScores[name] = currentScores[name] + 1
   }
